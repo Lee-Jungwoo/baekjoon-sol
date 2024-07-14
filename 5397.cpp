@@ -52,7 +52,7 @@ int main()
 
         cursor = stack.begin();
         while(cursor != stack.end()){
-            cout<<*cursor;
+            cout<<*cursor++;
         }
         cout<<endl;
     }
