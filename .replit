@@ -1,0 +1,11 @@
+modules = ["c-clang14", "cpp-clang14"]
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "clang main.cpp"]
+
+
+
+
