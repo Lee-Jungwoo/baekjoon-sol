@@ -2,6 +2,7 @@ modules = ["c-clang14", "cpp-clang14"]
 run = "clang++ main.cpp -o main && ./main"
 
 
+
 [nix]
 channel = "stable-24_05"
 
