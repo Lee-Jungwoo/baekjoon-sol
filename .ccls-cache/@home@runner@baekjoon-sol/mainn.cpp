@@ -4,7 +4,7 @@
 
 using namespace std;
 struct info{
-    bool LR = false;
+    bool exceed = false;
     int value = 0;
     int index = 0;
 };
@@ -27,14 +27,14 @@ int main() {
     for(int i=n-1;i>=0;i--){
 
         if(s.empty()){
-            lr[i].LR = true;
+            lr[i].exceed = true;
             lr[i].index = n;
             info * tmp = new info;
             tmp->value = arr[i];
             tmp->index = i;
             s.push(tmp);
         } else {
-            while(!s.empty()){
+            while(!s.empty()){ 
                 info top = *s.top();
                 if(top.value <= arr[i]){
                     s.pop();
@@ -48,7 +48,7 @@ int main() {
                 }
             }
             if(s.empty()){
-                lr[i].LR = true;
+                lr[i].exceed = true;
                 lr[i].index = n;
                 info * tmp = new info;
                 tmp->value = arr[i];
@@ -60,7 +60,7 @@ int main() {
 
     long long cnt=0;
     for(int i=0;i<n;i++){
-        if(lr[i].LR){
+        if(lr[i].exceed){
 
             cout<<"true, "<<(n-i-1)<<endl;
         }else{
